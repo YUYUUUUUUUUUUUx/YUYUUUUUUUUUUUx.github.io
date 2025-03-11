@@ -270,3 +270,126 @@
     footer img {
         height: 150px;
     }
+
+
+
+/* Diseño para pantallas pequeñas (teléfonos) */
+@media (max-width: 767px) {
+    /* Estilo general */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-size: 14px; /* Tamaño de fuente más pequeño para dispositivos móviles */
+      
+    }
+
+    .container-text {
+        font-size: 30px; /* Hacer el texto más pequeño */
+       
+    }
+
+    .slide {
+        height: 250px; /* Ajustar la altura de las imágenes para teléfonos */
+        object-fit: cover; /* Asegura que las imágenes se ajusten bien sin deformarse */
+    }
+
+     /* Ocultar el primer header */
+     .header-menu {
+        display: none;
+    }
+   
+
+    /* Caja de contenido (texto + imagen) */
+    .box {
+        display: flex;
+        flex-direction: column; /* Imágenes encima del texto */
+        align-items: center;
+        margin: 20px 0;
+    }
+
+    .box-img img {
+        display: block;
+        margin: auto;
+        margin-top: 20px;
+        width: 90%; /* Ajusta el tamaño de la imagen para que sea más pequeña en pantallas pequeñas */
+        max-width: 450px; /* Mantén el límite máximo de tamaño */
+        height: auto;
+        border-radius: 10px;
+    }
+
+    /* Títulos */
+    h3 {
+        font-size: 1.2em;
+        text-align: center;
+        margin-bottom: 15px; /* Añadir espacio debajo del título */
+    }
+
+    /* Ajuste de los textos */
+    .texto {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    /* Footer (pie de página) */
+    footer {
+        background-color: #1f5014;
+        color: white;
+        text-align: center;
+        padding: 20px 10px;
+        font-size: 14px;
+        margin-top: 20px; /* Añade margen superior para que no se quede pegado al contenido */
+    }
+}
+
+
+/* Tablet (pantallas medianas) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    body {
+        font-size: 16px;
+    }
+
+    .header-menu {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .header-menu a {
+        font-size: 16px;
+        width: 45%;
+    }
+
+    .box {
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 20px;
+    }
+
+    .box-img {
+        margin-left: 20px;
+    }
+
+    .img-container {
+        max-height: 300px;
+    }
+
+    
+    .container-text {
+        font-size: 60px; /* Hacer el texto más pequeño */
+       
+    }
+
+    h3 {
+        font-size: 1.5em;
+    }
+
+     /* Ajuste de los textos */
+     .texto {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+}
+
+
