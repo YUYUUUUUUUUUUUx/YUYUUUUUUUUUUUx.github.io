@@ -1,64 +1,31 @@
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Apache2 Debian Default Page: It works</title>
-
-    <style type="text/css">
-        body {
-            background-color: #fff;
-            color: #000;
-            width: 800px;
-            margin: 0 auto;
-            font-family: Verdana, Arial, Helvetica, sans-serif;
-        }
-
-        div#page {
-            margin-top: 50px;
-        }
-
-        div#header {
-            background-color: #0b253a;
-            color: #fff;
-            padding: 20px;
-        }
-
-        h1 {
-            margin: 0;
-        }
-
-        h2 {
-            color: #0b253a;
-        }
-
-        p, li {
-            line-height: 1.6em;
-        }
-
-        a {
-            color: #007dc1;
-            text-decoration: none;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="apache2-default.css">
 </head>
 
 <body>
-<div id="page">
-    <div id="header">
+<div class="content">
+    <div class="header">
+        <img src="/icons/openlogo-75.png" alt="Debian Logo">
         <h1>Apache2 Debian Default Page</h1>
-        <p>This is the default welcome page used to test the correct 
-        operation of the Apache2 server after installation on Debian systems.</p>
     </div>
 
-    <h2>It works!</h2>
+    <div class="section">
+        <h2 class="works">It works!</h2>
 
-    <p>This is the default web page for this server. The web server software 
-    is running but no content has been added yet.</p>
+        <p>This is the default welcome page used to test the correct operation of the Apache2 server after installation on Debian systems.
+        If you can read this page, it means that the Apache HTTP server installed at this site is working properly.
+        You should <b>replace this file</b> (located at <tt>/var/www/html/index.html</tt>) before continuing to operate your HTTP server.</p>
 
-    <h2>Configuration Overview</h2>
+        <p>If you are a normal user of this web site and don't know what this page is about, this probably means that the site is currently unavailable due to maintenance.
+        If the problem persists, please contact the site's administrator.</p>
+    </div>
+
+    <div class="section">
+         <h2>Configuration Overview</h2>
 
     <p>If you can read this page, it means that the Apache HTTP server 
     installed at this site is working properly. You should replace this file 
@@ -113,5 +80,13 @@
     their respective packages.</p>
 
 </div>
+    </div>
+</div>
 </body>
 </html>
+
+
+
+
+
+
