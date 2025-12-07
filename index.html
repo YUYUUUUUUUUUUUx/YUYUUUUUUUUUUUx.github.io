@@ -1,322 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forest Wrld - Deforestación</title>
-    <link rel="stylesheet" href="Estilo.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Examen – Servidor Web Debian</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: #f0f0f0;
+            text-align: center;
+            padding-top: 70px;
+        }
+        .card {
+            background-color: #2e2e2e;
+            padding: 30px;
+            border-radius: 10px;
+            width: 60%;
+            margin: auto;
+            box-shadow: 0 0 10px #000;
+        }
+        .ok {
+            color: #4caf50;
+            font-size: 40px;
+            font-weight: bold;
+        }
+        .info {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        .footer {
+            margin-top: 40px;
+            font-size: 14px;
+            color: #888;
+        }
+    </style>
 </head>
-
 <body>
 
-    <!-- Primer Header (Logo) -->
-    <header class="header-logo">
-        <img src="Logo.png" alt="Logo">
-    </header>
+    <div class="card">
+        <h1>🚀 Servidor Web Apache – Debian</h1>
+        <p class="ok">Estado: Funcionando ✔️</p>
 
-    <!-- Segundo Header (Menú) -->
-    <header class="header-menu">
-        <nav>
-            <a href="#intro"><i class="fa-solid fa-book"></i> Introducción</a>
-        <a href="#conce"><i class="fa-solid fa-lightbulb"></i> Concepto</a>
-        <a href="#cau"><i class="fa-solid fa-exclamation-triangle"></i> Causas</a>
-        <a href="#conse"><i class="fa-solid fa-bolt"></i> Consecuencias</a>
-        <a href="#estra"><i class="fa-solid fa-chart-line"></i> Estrategias</a>
-        <a href="#conclu"><i class="fa-solid fa-flag-checkered"></i> Conclusión</a>
-        </nav>
-    </header>
+        <div class="info">
+            <p>Este archivo fue modificado como parte del examen/práctica.</p>
+            <p><strong>Administrador:</strong> (tu nombre aquí)</p>
+            <p><strong>Fecha:</strong> <span id="fecha"></span></p>
+        </div>
 
-
-    
-   <!-- IMAGEN -->
-   <section id="Img">
-    <div class="img-container">
-        <img src="https://es.knowablemagazine.org/docserver/fulltext/andes-amazon-connection-1600x600.jpg" class="slide" alt="">
-        <img src="https://ipsnoticias.net/wp-content/uploads/2024/06/Deforestacion-Sumatra-Peter-Prokosch-Pnuma.jpg" class="slide" alt="">
-        <img src="https://www.scidev.net/america-latina/wp-content/uploads/sites/3/2020/11/degradacion_amazonas1-996x567.jpg" class="slide" alt="">
-        <img src="https://coolx.earth/wp-content/uploads/2024/08/consecuencias-deforestacion-coolx.jpg" class="slide" alt="">
-        <div class="container-text" id="text">Deforestación</div>
+        <div class="info">
+            <h3>Pruebas realizadas:</h3>
+            <ul style="text-align:left; width:60%; margin:auto;">
+                <li>Apache instalado correctamente</li>
+                <li>Permisos de edición en /var/www/html</li>
+                <li>Modificación manual del archivo index.html</li>
+                <li>Servidor respondiendo por HTTP</li>
+            </ul>
+        </div>
     </div>
-</section>
 
-<script>
-    // Imágenes y textos con diferentes fuentes
-    const images = document.querySelectorAll(".slide");
-    const text = document.getElementById("text");
-    const fonts = ["font1", "font2", "font3", "font4"];
-    let index = 0;
+    <p class="footer">Debian GNU/Linux – Administrador de Sistemas</p>
 
-    function changeSlide() {
-        // Ocultar todas las imágenes
-        images.forEach(img => img.style.display = "none");
+    <script>
+        // Mostrar la fecha actual automáticamente
+        document.getElementById("fecha").innerText = new Date().toLocaleString();
+    </script>
 
-        // Mostrar la nueva imagen
-        images[index].style.display = "block";
-
-        // Cambiar tipografía del texto
-        text.className = "container-text " + fonts[index]; 
-
-        // Cambiar al siguiente índice
-        index = (index + 1) % images.length;
-    }
-
-    // Cambiar imagen cada 3 segundos
-    setInterval(changeSlide, 2000);
-
-    // Mostrar la primera imagen al inicio
-    changeSlide();
-
-
-    window.addEventListener("scroll", function () {
-    let headerLogo = document.querySelector(".header-logo");
-    let headerMenu = document.querySelector(".header-menu");
-    let body = document.body;
-
-    if (window.scrollY > 50) { 
-        headerLogo.style.transform = "translateY(-100%)"; 
-        headerLogo.style.opacity = "0";
-        headerMenu.classList.add("fixed");
-        body.style.paddingTop = "60px"; // Ajusta la altura cuando el logo desaparece
-    } else {
-        headerLogo.style.transform = "translateY(0)"; 
-        headerLogo.style.opacity = "1";
-        headerMenu.classList.remove("fixed");
-        body.style.paddingTop = "160px"; // Vuelve a su tamaño original
-    }
-});
-</script>
-
-    
-
-     <!--    INTROUCCIÓN        -->
-     <section id="intro">
-        <div class="box">
-
-            <div class="texto">
-                <br><br>
-                <h3>Introducción</h3>
-                <br>
-                <p>Los bosques desempeñan un papel fundamental en el equilibrio del planeta, ya que regulan el ciclo del agua, estabilizan el clima y absorben carbono, contribuyendo a mitigar el cambio climático. Sin embargo, la creciente demanda de materia prima y  el espacio que ocupa pone en riesgo su existencia, impulsando una deforestación descontrolada. Este daño no solo afecta a la biodiversidad, sino que también tiene consecuencias directas en nuestra vida diaria, reflejándose en fenómenos climáticos extremos, la pérdida de recursos naturales y la disminución de la calidad del aire. En este texto, analizaremos las implicaciones de este problema, exploraremos posibles soluciones y reflexionaremos sobre la urgencia de actuar frente a esta crisis ambiental.
-                </p>
-            </div>
-            <br>
-            <div class="box-img">
-               <img src="https://static.wixstatic.com/media/11062b_9b75dfbcfe7e4437af2cf4b6c9fdb6b4~mv2.jpeg/v1/fill/w_568,h_378,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_9b75dfbcfe7e4437af2cf4b6c9fdb6b4~mv2.jpeg" alt="">
-            </div>
-        </div> 
-    </section>
-
-    
-
-    <!--    CONCEPTO       -->
-    <section id="conce">
-        <hr>
-        <br>
-        <div class="box">
-
-            <div class="texto">
-                <h3>Concepto</h3>
-                <br>
-                <p>La deforestación causada por el ser humano es la tala o destrucción de árboles en áreas forestales, o la provocación de incendios, con el fin de emplear esos terrenos de diversas maneras: para el uso agrícola (como la producción de palma aceitera o soja para el ganado), la extracción de madera, la explotación minera o la urbanización. <br><br> Esta pérdida tiene un impacto profundo en el medio ambiente y en la biodiversidad, así como en la salud y la economía de las comunidades que dependen de los bosques y selvas. En realidad, puesto que todo está conectado, afecta a la supervivencia de todas las personas en el planeta. 
-                </p>
-            </div>
-            <br>
-            <div class="box-img">
-               <img src="https://media.gettyimages.com/id/1150645330/es/v%C3%ADdeo/pine-tree-forest-deforestation.jpg?s=640x640&k=20&c=W0r7FZy3QcMd4vac7_hQ3JmYs2cZEcaB43d5R1s7tpI=" alt="">
-            </div>
-        </div> 
-    </section>
-   
-    <!--    CAUSAS        -->
-    <section id="cau">
-        <br>
-        <hr>
-        <br>
-    
-        <div class="box">
-
-            <div class="texto">
-                <h3>Causas de la deforestación</h3>
-                <br>
-                <p>Las causas de la deforestación pueden clasificarse en 2 tipos:</p>
-                <br>
-                <dl>
-                    <div>
-                        <dt>Deforestación natural</dt>
-                        <dd>Se debe a los efectos de accidentes naturales y eventos propios de la dinámica terrestre, por lo que no se pueden anticipar ni detener una vez comenzados. Este tipo de deforestación ocurre, por ejemplo, cuando hay grandes tormentas con rayos, tornados, erupciones volcánicas o incendios forestales, que pueden destruir un bosque en muy poco tiempo. Otra de las causas de la deforestación natural son las plagas y enfermedades propias de los árboles, provocadas por insectos (como escarabajos y pulgones) que son capaces de producir una “tala natural” masiva de árboles.</dd>
-                        <br>
-                        <div class="box-img-t">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Cloud_to_cloud_lightning_strike.jpg" alt="">
-                         </div>
-                    </div>
-                    <br>
-                    <div>
-                        <dt>Deforestación Humana</dt>
-                        <dd>
-                            Es fruto directo o indirecto de las actividades humanas y son, por lo tanto, responsabilidad nuestra. Representan la principal causa de deforestación y, a diferencia de los fenómenos naturales, pueden ser evitadas. Entre las principales causas de la deforestación humana se encuentran:
-                            
-                            <div class="box-img-t">
-                                <img src="https://images.ecestaticos.com/5cA3Fn8c9_0jOmjIDopiGMLOH34=/155x66:2061x1496/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F3cc%2F16f%2Fa99%2F3cc16fa991d4ebe7991ed0258e6be3db.jpg" alt="">
-                            </div>
-                            <ul>
-                                <br>
-                                <li> 
-                                    <p class="titu">Expasión urbana:</p> 
-                                    <span class = "descri">Las ciudades crecen a medida que su población aumenta y se requiere de nuevo espacio para construir viviendas y obras viales. </span></li><br>
-                                <li>
-                                    <p class="titu">Tala indiscriminada con fines agrícolas: </p>
-                                    <span class = "descri">El aumento de la población mundial conlleva la necesidad de producir más y más alimentos, de manera que se requieren más y más superficies cultivables. Para ello, se suele talar secciones enteras de bosques y convertirlas en granjas o en campos para el pastoreo.</span></li><br>
-                                <li>
-                                    <p class="titu">Operaciones madereras y papeleras: </p>
-                                    <span class = "descri">Las industrias de la madera, la pulpa y el papel, entre otros derivados de los árboles, se alimentan de consumir enormes secciones anuales de los principales bosques. Aunque en ocasiones estas empresas invierten también en programas de reforestación, el ritmo de la tala es siempre muy superior al ritmo de la plantación de nuevos árboles.</span></li><br>
-                                <li>
-                                    <p class="titu">Leyes Forestales Deficientes y Estados negligentes: </p>
-                                    <span class = "descri">En última instancia, la responsabilidad de proteger estos tesoros naturales es de los Estados en cuyos territorios se dan los bosques, pero muchos de ellos carecen del incentivo para protegerlos, especialmente cuando ello implica la pérdida de dinero. </span></li><br>
-                            </ul>
-                        </dd>
-                    </div>
-                   
-                </dl>
-            </div>
-
-          
-        </div> 
-    </section>
-
-
-
-    <!--    CONSECUENCIAS        -->
-    <section id="conse">
-        
-    <br>
-    <hr>
-    <br>
-        <div class="box">
-
-            <div class="texto">
-                <h3>Consecuencias de la deforestación</h3>
-                <br>
-                <div class="box-img">
-                    <img src="https://concepto.de/wp-content/uploads/2019/12/deforestacion-amazonas-brasil-2019-fuego-e1576021800889.jpg" alt="">
-                </div>
-                <br>
-                <dl>
-                    <div>
-                        <dt>Destrucción de los suelos</dt>
-                        <dd>La radiación solar, el viento y la lluvia (todos factores erosivos) son atenuados en una importante medida por la presencia de los bosques, que actúan como defensa del suelo. Sin ellos, los elementos inciden directamente en el suelo, ocasionando cambios de relieve y erosiones.</dd>
-                    </div>
-                    <br>
-                    <div>
-                        <dt>Aumento del carbono en la atmósfera y calentamiento global</dt>
-                        <dd>Los bosques cumplen con una función termorreguladora del planeta ya que absorben grandes cantidades de dióxido de carbono (CO2) que utilizan para realizar la fotosíntesis. Al deforestar, se incrementan los niveles de dióxido de carbono, que se acumula en la atmósfera. Esta alteración en el ciclo de este gas trae como consecuencia un aumento en la temperatura mundial.</dd>
-                    </div>
-                    <br>
-                    <div>
-                        <dt>Empobrecimiento del aire</dt>
-                        <dd> Los bosques, además, liberan importantes cantidades de vapor de agua a la atmósfera, lo cual contribuye a mantener los suelos húmedos y aporta al ciclo hidrológico. La disminución de este aporte produce aires más secos.</dd>
-                    </div>
-                    <br>
-                    <div>
-                        <dt>Perdida de biodiversidad</dt>
-                        <dd>Las selvas y los bosques son algunos de los ecosistemas más fecundos del planeta, albergan miles o millones de formas de vida de todo tipo (un alto porcentaje de las cuales ni siquiera ha sido descubierto por la humanidad). Todo ello se pone en riesgo si destruimos su hábitat.</dd>
-                    </div>
-                </dl>
-            </div>
-
-           
-        </div> 
-    </section>
-
-
-    
-
-    <!--    Estrategias       -->
-    <section id="estra">
-        <br>
-        <hr>
-        <br>
-        <div class="box">
-
-            <div class="texto">
-                <h3>Estrategias para reducir la deforestación</h3>
-               <br>
-                <div class="box-img">
-                    <img src="https://oem.com.mx/elsoldetoluca/img/14563869/1532151679/BASE_LANDSCAPE/1200/REFORESTACI%C3%93N.jpg" alt="">
-                </div>
-                <br>
-                <dl>
-                    <div>
-                        <dt>Reforestación y conservación de bosques</dt>
-                        <dd>Plantar árboles en áreas degradadas ayuda a restaurar los ecosistemas y mejorar la calidad del suelo. La creación y mantenimiento de reservas naturales y parques nacionales garantiza la protección de grandes extensiones de bosques. Además, implementar programas de restauración forestal permite recuperar zonas afectadas por la tala y la degradación ambiental.</dd>
-                    </div>
-                    <br>
-                    <div>
-                        <dt>Prácticas sostenibles en la agricultura y ganadería</dt>
-                        <dd>Promover la agroforestería, que combina cultivos con árboles, ayuda a mantener la biodiversidad y mejorar la calidad del suelo. La utilización de técnicas agrícolas como la rotación de cultivos reduce la necesidad de talar más terrenos. Asimismo, fomentar la ganadería sostenible evita la expansión de estas actividades en zonas forestales, reduciendo su impacto en los ecosistemas.</dd>
-                    </div>
-                    <br>
-                    <div>
-                        <dt>Reducción del consumo de productos que fomentan la deforestación</dt>
-                        <dd>Evitar productos que contienen aceite de palma no sostenible contribuye a disminuir la destrucción de selvas tropicales. Reducir el consumo de papel y madera provenientes de fuentes no certificadas ayuda a frenar la sobreexplotación de los bosques. Apoyar productos con certificación FSC (Forest Stewardship Council) garantiza que provienen de una gestión forestal responsable.</dd>
-                    </div>
-                    <br>
-                    <div>
-                        <dt>Desarrollo de alternativas ecológicas</dt>
-                        <dd>Fomentar el uso de materiales de construcción alternativos al uso de madera reduce la demanda de tala de árboles. Promover el uso de energía renovable en lugar de la biomasa, como la leña, ayuda a disminuir la deforestación causada por la recolección de madera como fuente de combustible.</dd>
-                    </div>
-                    <br>
-                    <div>
-                        <dt>Legislación y políticas ambientales</dt>
-                        <dd> Aplicar y reforzar leyes contra la tala ilegal es esencial para evitar la pérdida de bosques. Incentivar programas de pago por servicios ambientales motiva a comunidades y empresas a conservar los ecosistemas. Además, establecer acuerdos internacionales para la protección de bosques permite una cooperación global para enfrentar el problema de la deforestación.</dd>
-                    </div>
-                    <br>
-                    <div>
-                        <dt>Educación y concienciación</dt>
-                        <dd>Sensibilizar a la población sobre la importancia de los bosques permite generar un mayor compromiso con su protección. Fomentar programas educativos sobre el impacto de la deforestación ayuda a que las personas tomen decisiones más responsables.</dd>
-                    </div>
-                </dl>
-            </div>
-
-            <div class="box-img">
-               
-            </div>
-        </div> 
-    </section>
-
-
-    
-
-    <!--    CONCLUSIÓN        -->
-    <section id="conclu">
-        <br>
-        <hr>
-        <br>
-        <div class="box">
-
-            <div class="texto">
-                <h3>Conclusión</h3>
-                <br>
-                <p>Con lo expuesto, podemos concluir que actualmente no se están tomando las medidas necesarias para frenar esta crisis. La mala gestión de la urbanización y el crecimiento de la sobrepoblación han incrementado la demanda de tierras deforestadas, poniendo en riesgo la conservación de los bosques. Sin embargo, no podemos seguir agotando estos recursos sin considerar las consecuencias. Es fundamental tomar conciencia y adoptar estrategias efectivas para la preservación de los bosques y selvas, dado su papel esencial en nuestra vida diaria. Solo así podremos garantizar que estos ecosistemas perduren para las futuras generaciones.</p>
-            </div>
-            <br>
-            <div class="box-img">
-               <img src="https://www.rainforest-alliance.org/wp-content/uploads/2018/08/amazon-deforestation-fire.jpg.optimal.jpg" alt="">
-            </div>
-        </div> 
-        <br>
-    </section>
-
-    
-
-    <footer>  
-    
-        <img src="Footer.png" alt="">
-        <p>| Wilmer Morales - Desarrollo y Gestión de Software</p>
-    </footer>
-
-    
 </body>
-
 </html>
+
